@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { animate, stagger } from "motion";
-import { RouterLink } from "vue-router";
-import Button from "../components/Button.vue";
-import { onMounted } from "vue";
-onMounted(() => {
-  animate(
-    "li",
-    { y: [-150, 0], opacity: [0, 1] },
-    { delay: stagger(0.3, { start: 0.5 }) }
-  );
-});
+  import { animate, stagger } from "motion";
+  import { RouterLink } from "vue-router";
+  import Button from "../components/Button.vue";
+  import { onMounted } from "vue";
+  onMounted(() => {
+    animate(
+      "li",
+      { y: [-150, 0], opacity: [0, 1] },
+      { delay: stagger(0.3, { start: 0.5 }) },
+    );
+  });
 </script>
 
 <template>

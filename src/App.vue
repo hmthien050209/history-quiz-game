@@ -1,19 +1,19 @@
 <script lang="ts">
-import { quizes } from "./quizes";
-import { Motion, Presence } from "motion/vue";
-import { useQuizStore } from "./stores/useQuizStore";
-import { onMounted } from "vue";
-export default {
-  components: { Motion, Presence },
-  setup() {
-    onMounted(() => {
-      useQuizStore().init();
-    });
-    return {
-      quizes,
-    };
-  },
-};
+  import { quizes } from "./quizes";
+  import { Motion, Presence } from "@oku-ui/motion";
+  import { useQuizStore } from "./stores/useQuizStore";
+  import { onMounted } from "vue";
+  export default {
+    components: { Motion, Presence },
+    setup() {
+      onMounted(() => {
+        useQuizStore().init();
+      });
+      return {
+        quizes,
+      };
+    },
+  };
 </script>
 <template>
   <div class="background">
@@ -37,8 +37,8 @@ export default {
   </div>
 </template>
 <style scoped>
-.background {
-  background-image: url("assets/images/background.png");
-  @apply h-screen w-screen overflow-hidden bg-cover bg-no-repeat font-['Roboto_Slab'] font-medium text-normalForegroundColor;
-}
+  .background {
+    background-image: url("assets/images/background.png");
+    @apply h-screen w-screen overflow-hidden bg-cover bg-no-repeat font-['Roboto_Slab'] font-medium text-normalForegroundColor;
+  }
 </style>

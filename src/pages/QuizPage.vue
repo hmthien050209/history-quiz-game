@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import AnswerSelectionBox from "../components/AnswerSelectionBox.vue";
-import Button from "../components/Button.vue";
-import { playConfetti } from "../playConfetti";
-import { quizes } from "../quizes";
-import { useQuizStore } from "../stores/useQuizStore";
+  import AnswerSelectionBox from "../components/AnswerSelectionBox.vue";
+  import Button from "../components/Button.vue";
+  import { playConfetti } from "../playConfetti";
+  import { quizes } from "../quizes";
+  import { useQuizStore } from "../stores/useQuizStore";
 
-const props = defineProps({
-  id: { type: Number, required: true },
-});
+  const props = defineProps({
+    id: { type: Number, required: true },
+  });
 
-const currentQuiz = quizes.find((quiz) => quiz.id == props.id)!;
-const store = useQuizStore();
+  const currentQuiz = quizes.find((quiz) => quiz.id == props.id)!;
+  const store = useQuizStore();
 
-function onSolved() {
-  store.setSolved(props.id);
-  playConfetti();
-}
+  function onSolved() {
+    store.setSolved(props.id);
+    playConfetti();
+  }
 </script>
 
 <template>
@@ -53,7 +53,7 @@ function onSolved() {
 </template>
 
 <style scoped>
-.quiz-page {
-  @apply relative flex h-screen w-screen flex-col items-center justify-center p-16;
-}
+  .quiz-page {
+    @apply relative flex h-screen w-screen flex-col items-center justify-center p-16;
+  }
 </style>

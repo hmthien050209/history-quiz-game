@@ -37,23 +37,23 @@
   </div>
 </template>
 <script setup lang="ts">
-import { quizes } from "../quizes";
-import QuizSelectionBox from "../components/QuizSelectionBox.vue";
-import { useQuizStore } from "../stores/useQuizStore";
-import { ref, onMounted } from "vue";
-import Button from "../components/Button.vue";
-import { playConfetti } from "../playConfetti";
-const keyColIdx: number = 10;
-let store = useQuizStore();
-let answeredQuizNum = ref(
-  store.quizSolvedState.filter((val) => val === true).length
-);
+  import { quizes } from "../quizes";
+  import QuizSelectionBox from "../components/QuizSelectionBox.vue";
+  import { useQuizStore } from "../stores/useQuizStore";
+  import { ref, onMounted } from "vue";
+  import Button from "../components/Button.vue";
+  import { playConfetti } from "../playConfetti";
+  const keyColIdx: number = 10;
+  let store = useQuizStore();
+  let answeredQuizNum = ref(
+    store.quizSolvedState.filter((val) => val === true).length,
+  );
 
-function showAllAnswers() {
-  store.setSolvedAll();
-  playConfetti();
-}
-onMounted(() => {
-  if (answeredQuizNum.value === 13) playConfetti();
-});
+  function showAllAnswers() {
+    store.setSolvedAll();
+    playConfetti();
+  }
+  onMounted(() => {
+    if (answeredQuizNum.value === 13) playConfetti();
+  });
 </script>
