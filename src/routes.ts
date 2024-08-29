@@ -1,9 +1,9 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import Home from "./pages/Home.vue";
-import QuizPage from "./pages/QuizPage.vue";
-import QuizList from "./pages/QuizList.vue";
-import RulesPage from "./pages/RulesPage.vue";
-import RandomWheel from "./pages/RandomWheel.vue";
+const Home = () => import("./pages/Home.vue");
+const QuizPage = () => import("./pages/QuizPage.vue");
+const QuizList = () => import("./pages/QuizList.vue");
+const RulesPage = () => import("./pages/RulesPage.vue");
+const RandomWheel = () => import("./pages/RandomWheel.vue");
 
 const routes = [
   { path: "/", component: Home },
